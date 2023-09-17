@@ -2,6 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Update dockerfile') {
+      steps {
       script {
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])  {
@@ -15,6 +16,7 @@ pipeline {
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
           
         }
+      }
       }
   }
 }

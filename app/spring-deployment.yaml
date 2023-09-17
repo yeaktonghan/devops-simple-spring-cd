@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring
-        image: skymapled/simple-spring
+        image: skymapled/simple-spring:v1
         ports:
         - containerPort: 8080

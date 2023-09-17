@@ -13,7 +13,7 @@ pipeline {
                         sh "sed -i 's+skymapled/simple-spring.*+skymapled/simple-spring:${DOCKERTAG}+g' app/spring-deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/kubernetesmanifest.git HEAD:main"
+                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/devops-simple-spring-cd.git HEAD:main"
           
         }
       }

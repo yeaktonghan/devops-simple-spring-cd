@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - controlplane.hanyeaktong.site
-    secretName: tls-cert
+    secretName: argocd-cert
   rules:
   - host: controlplane.hanyeaktong.site
     http:

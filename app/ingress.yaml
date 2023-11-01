@@ -19,6 +19,6 @@ spec:
         path: /spring
         backend:
           service:
-            name: kubernetes-dashboard
+            name: spring-service
             port:
               number: 8080

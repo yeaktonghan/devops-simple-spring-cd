@@ -7,7 +7,6 @@ metadata:
     certmanager.k8s.io/issuer: "letsencrypt-cluster-issuer"
     certmanager.k8s.io/acme-challenge-type: http01
     nginx.ingress.kubernetes.io/rewrite-target: /(.*)$
-    nginx.ingress.kubernetes.io/permanent: "true"
 spec:
   tls:
   - hosts:

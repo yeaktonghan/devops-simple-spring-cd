@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spring-ingress
+  namespace: argocd
+  annotations:
+    certmanager.k8s.io/issuer: "letsencrypt-cluster-issuer"
+    certmanager.k8s.io/acme-challenge-type: http01
+spec:
+  tls:
+  - hosts:
+    - controlplane.hanyeaktong.site
+    secretName: tls-cert
+  rules:
+  - host: controlplane.hanyeaktong.site
+    http:
+      paths:
+      - pathType: Prefix
+        path: /spring
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port:
+              number: 8080

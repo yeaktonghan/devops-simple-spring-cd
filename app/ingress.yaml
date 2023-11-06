@@ -4,9 +4,7 @@ metadata:
   name: spring-ingress
   namespace: spring
   annotations:
-    certmanager.k8s.io/issuer: "letsencrypt-cluster-issuer"
-    certmanager.k8s.io/acme-challenge-type: http01
-    # nginx.ingress.kubernetes.io/rewrite-target: /(.*)$
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
   - hosts:
@@ -17,7 +15,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /
+        path: /spring
         backend:
           service:
             name: spring-service

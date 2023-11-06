@@ -15,7 +15,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /spring
+        path: /
         backend:
           service:
             name: spring-service

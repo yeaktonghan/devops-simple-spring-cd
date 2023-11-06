@@ -19,5 +19,4 @@ spec:
         backend:
           service:
             name: spring-service
-            port:
-              number: 8080
+            servicePort: 8080
